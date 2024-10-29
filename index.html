@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>शिवप्रकाश बाइक रिपेयर सेंटर - टिहरी गढ़वाल</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        /* Enhanced Navigation Styles */
+        
+        .navbar {
+            background-color: #1d3557;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            position: relative;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            background-color: #e63946;
+            border-radius: 5px;
+        }
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1d3557;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #e63946;
+        }
+        /* Hero Section */
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/600');
+            height: 80vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        /* Services Grid */
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+            background-color: #f1faee;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        /* Gallery */
+        
+        .gallery {
+            padding: 4rem 2rem;
+            background-color: #457b9d;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        /* Contact Form */
+        
+        .contact-section {
+            padding: 4rem 2rem;
+            background-color: #1d3557;
+            color: white;
+        }
+        
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            color: black;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .button {
+            background-color: #e63946;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .button:hover {
+            background-color: #c1121f;
+        }
+        /* Footer */
+        
+        .footer {
+            background-color: #1d3557;
+            color: white;
+            padding: 4rem 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* Mobile Responsive */
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+            .dropdown-content {
+                position: static;
+                width: 100%;
+            }
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">शिवप्रकाश बाइक रिपेयर</a>
+            <ul class="nav-links">
+                <li><a href="index.html">होम</a></li>
+                <li class="dropdown">
+                    <a href="services.html">सेवाएं</a>
+                    <div class="dropdown-content">
+                        <a href="#engine">इंजन रिपेयर</a>
+                        <a href="#electrical">इलेक्ट्रिकल वर्क</a>
+                        <a href="#general">जनरल सर्विसिंग</a>
+                        <a href="#tyre">टायर सर्विस</a>
+                    </div>
+                </li>
+                <li><a href="gallery.html">गैलरी</a></li>
+                <li><a href="contact.html">संपर्क</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+
+            <h1>शिवप्रकाश बाइक रिपेयर सेंटर</h1>
+            <p>टिहरी गढ़वाल का सबसे विश्वसनीय बाइक सर्विस सेंटर</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-grid">
+        <div class="service-card">
+            <div class="service-image" style="background-image: url('engine_repair.jpg')"></div>
+            <div class="service-content">
+                <h3>इंजन रिपेयर</h3>
+                <p>सभी प्रकार के बाइक इंजन की मरम्मत और सर्विसिंग</p>
+                <p>₹2000 से शुरू</p>
+            </div>
+        </div>
+        <div class="service-card">
+            <div class="service-image" style="background-image: url('bike\ electic\ work.jpg')"></div>
+            <div class="service-content">
+                <h3>इलेक्ट्रिकल वर्क</h3>
+                <p>बैटरी, स्टार्टर और वायरिंग की मरम्मत</p>
+                <p>₹300 से शुरू</p>
+            </div>
+        </div>
+        <div class="service-card">
+            <div class="service-image" style="background-image: url(general\ servicing.jpg)"></div>
+            <div class="service-content">
+                <h3>जनरल सर्विसिंग</h3>
+                <p>रूटीन मेंटेनेंस और सर्विसिंग</p>
+                <p>₹500 से शुरू</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery">
+        <h2>हमारी गैलरी</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="bike servicing.jpg" alt="बाइक सर्विसिंग">
+            </div>
+            <div class="gallery-item">
+                <img src="workshop.jpg" alt="वर्कशॉप">
+            </div>
+            <div class="gallery-item">
+                <img src="tools.jpg" alt="टूल्स">
+            </div>
+            <div class="gallery-item">
+                <img src="machanic.jpg" alt="मैकेनिक">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>संपर्क करें</h2>
+                <p>हमसे संपर्क करने के लिए नीचे दिए गए फॉर्म का उपयोग करें या सीधे कॉल करें।</p>
+                <div class="contact-details">
+                    <p>फ़ोन: +91 7217445213</p>
+                    <p>पता: मेन मार्केट, टिहरी गढ़वाल</p>
+                    <p>ईमेल: info@shivprakashbikes.com</p>
+                </div>
+            </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label>नाम</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>फ़ोन</label>
+                    <input type="tel" required>
+                </div>
+                <div class="form-group">
+                    <label>बाइक मॉडल</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>संदेश</label>
+                    <textarea rows="4" required></textarea>
+                </div>
+                <button type="submit" class="button">भेजें</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>शॉप टाइमिंग</h3>
+                <ul>
+                    <li>सोमवार - शनिवार: सुबह 9 बजे - शाम 7 बजे</li>
+                    <li>रविवार: बंद</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>क्विक लिंक्स</h3>
+                <ul>
+                    <li><a href="index.html">होम</a></li>
+                    <li><a href="services.html">सेवाएं</a></li>
+                    <li><a href="gallery.html">गैलरी</a></li>
+                    <li><a href="contact.html">संपर्क</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>सेवाएं</h3>
+                <ul>
+                    <li>इंजन रिपेयर</li>
+                    <li>इलेक्ट्रिकल वर्क</li>
+                    <li>जनरल सर्विसिंग</li>
+                    <li>टायर सर्विस</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 शिवप्रकाश बाइक रिपेयर सेंटर. सर्वाधिकार सुरक्षित.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handler
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('आपका संदेश भेज दि');
